@@ -23,6 +23,7 @@ INSTALLED_APPS = [
     "rest_framework",
     "users",
     "materials",
+    "django_filters",
 ]
 
 MIDDLEWARE = [
@@ -55,6 +56,10 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "config.wsgi.application"
 
+REST_FRAMEWORK = {
+    'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend']
+}
+
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
@@ -79,7 +84,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-LANGUAGE_CODE = "en-us"
+LANGUAGE_CODE = "ru-ru"
 
 TIME_ZONE = os.getenv("TIME_ZONE")
 
