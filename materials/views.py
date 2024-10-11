@@ -26,7 +26,9 @@ class LessonListAPIView(generics.ListAPIView):
     serializer_class = LessonSerializer
     queryset = Lesson.objects.all()
     filter_backends = [filters.SearchFilter]
-    search_fields = ["name",]
+    search_fields = [
+        "name",
+    ]
 
 
 class LessonRetrieveAPIView(generics.RetrieveAPIView):
