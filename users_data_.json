@@ -1,0 +1,98 @@
+[
+  {
+    "model": "users.user",
+    "pk": 1,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$fbqKnBlpNIXkOQNTUCRQ1o$Y9I+l0kQaptgAZjUuRQa3EtrLwRCgYfQASOELAHG8iA=",
+      "last_login": "2024-10-10T12:31:58.138Z",
+      "is_superuser": true,
+      "first_name": "",
+      "last_name": "",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2024-10-10T12:31:21.055Z",
+      "email": "admin@test.com",
+      "phone": null,
+      "city": null,
+      "avatar": "",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 2,
+    "fields": {
+      "password": "12345678",
+      "last_login": "2024-10-10T12:33:19Z",
+      "is_superuser": true,
+      "first_name": "Ravil",
+      "last_name": "Idrisov",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2024-10-10T12:32:58Z",
+      "email": "idravil@mail.ru",
+      "phone": "+7(996)290-24-33",
+      "city": "Респ Башкортостан, г Уфа",
+      "avatar": "users/avatars/images.jfif",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 3,
+    "fields": {
+      "password": "12345678",
+      "last_login": "2024-10-10T12:35:51Z",
+      "is_superuser": false,
+      "first_name": "Ivan",
+      "last_name": "Ivanov",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2024-10-10T12:35:43Z",
+      "email": "test@test.ru",
+      "phone": "89999999999",
+      "city": "Moscow",
+      "avatar": "",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.payment",
+    "pk": 1,
+    "fields": {
+      "user": 2,
+      "payment_date": "2024-10-10",
+      "paid_course": 8,
+      "paid_lesson": 3,
+      "payment_amount": 120000.0,
+      "payment_method": "bank_transfer"
+    }
+  },
+  {
+    "model": "users.payment",
+    "pk": 2,
+    "fields": {
+      "user": 3,
+      "payment_date": "2024-10-10",
+      "paid_course": 9,
+      "paid_lesson": 4,
+      "payment_amount": 100500.0,
+      "payment_method": "cash"
+    }
+  },
+  {
+    "model": "users.payment",
+    "pk": 3,
+    "fields": {
+      "user": 2,
+      "payment_date": "2024-10-12",
+      "paid_course": 8,
+      "paid_lesson": 5,
+      "payment_amount": 57777.0,
+      "payment_method": "bank_transfer"
+    }
+  }
+]
