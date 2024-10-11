@@ -1,0 +1,53 @@
+[
+  {
+    "model": "materials.course",
+    "pk": 8,
+    "fields": {
+      "name": "Питон для начинающих",
+      "description": "Курс для начинающих",
+      "image": ""
+    }
+  },
+  {
+    "model": "materials.course",
+    "pk": 9,
+    "fields": {
+      "name": "Java для начинающих",
+      "description": "Курс для начинающих",
+      "image": ""
+    }
+  },
+  {
+    "model": "materials.lesson",
+    "pk": 3,
+    "fields": {
+      "name": "Python-backend",
+      "description": "Говорят легкий курс",
+      "image": "",
+      "course": 8,
+      "video_url": null
+    }
+  },
+  {
+    "model": "materials.lesson",
+    "pk": 4,
+    "fields": {
+      "name": "Java",
+      "description": "Говорят hard курс",
+      "image": "",
+      "course": 9,
+      "video_url": null
+    }
+  },
+  {
+    "model": "materials.lesson",
+    "pk": 5,
+    "fields": {
+      "name": "Django Rest Framework",
+      "description": "Serializers",
+      "image": "",
+      "course": 8,
+      "video_url": "https://my.sky.pro/student-cabinet/stream-lesson/114486/homework-requirements"
+    }
+  }
+]
