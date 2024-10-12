@@ -9,6 +9,7 @@ class CourseAdmin(admin.ModelAdmin):
         "name",
         "description",
         "image",
+        "owner",
     )
 
 
@@ -20,4 +21,5 @@ class LessonAdmin(admin.ModelAdmin):
         "image",
         "course",
         "video_url",
+        "owner",
     )
