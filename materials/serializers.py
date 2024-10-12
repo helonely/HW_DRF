@@ -5,7 +5,7 @@ from materials.models import Course, Lesson
 
 
 class CourseSerializer(serializers.ModelSerializer):
-    lessons = SerializerMethodField()
+    lessons = SerializerMethodField(read_only=True)
 
     def get_lessons(self, course):
         return [lesson.description for lesson in Lesson.objects.filter(course=course)]
@@ -16,7 +16,7 @@ class CourseSerializer(serializers.ModelSerializer):
 
 
 class LessonSerializer(serializers.ModelSerializer):
-    course = CourseSerializer()
+    course = CourseSerializer(read_only=True)
 
     class Meta:
         model = Lesson
