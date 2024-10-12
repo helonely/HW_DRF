@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.db import models
 
 
@@ -18,6 +19,15 @@ class Course(models.Model):
         upload_to="materials/images",
         null=True,
         blank=True,
+    )
+
+    owner = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.SET_NULL,
+        verbose_name="владелец",
+        null=True,
+        blank=True,
+        help_text="Выберите владельца курса",
     )
 
     class Meta:
@@ -60,6 +70,15 @@ class Lesson(models.Model):
         null=True,
         blank=True,
         help_text="Введите ссылку на урок",
+    )
+
+    owner = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.SET_NULL,
+        verbose_name="владелец",
+        null=True,
+        blank=True,
+        help_text="Выберите владельца урока",
     )
 
     class Meta:
