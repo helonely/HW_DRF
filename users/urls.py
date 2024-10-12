@@ -37,6 +37,6 @@ urlpatterns = [
         PaymentUpdateAPIView.as_view(),
         name="payment_update",
     ),
-    path('token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
+    path('login/', TokenObtainPairView.as_view(), name='login/'),
     path('token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
 ] + router.urls
