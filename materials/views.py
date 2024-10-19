@@ -105,12 +105,6 @@ class LessonDestroyAPIView(generics.DestroyAPIView):
     serializer_class = LessonSerializer
     permission_classes = [IsAuthenticated, IsOwner | ~IsModer]
 
-    def get_queryset(self):
-        user = self.request.user
-        if user.is_authenticated:
-            return Lesson.objects.filter(owner=user)
-        return Lesson.objects.none()
-
 
 class SubscriptionCreateAPIView(generics.CreateAPIView):
     serializer_class = SubscriptionSerializer
