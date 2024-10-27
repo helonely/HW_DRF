@@ -16,19 +16,19 @@ router.register("", UserViewSet, basename="users")
 
 urlpatterns = [
     path("payments/", PaymentListAPIView.as_view(), name="payment_list"),
-    path("payment/create", PaymentCreateAPIView.as_view(), name="payment_create"),
+    path("payment/create/", PaymentCreateAPIView.as_view(), name="payment_create"),
     path(
-        "payments/<int:pk>/retrieve",
+        "payments/<int:pk>/retrieve/",
         PaymentRetrieveAPIView.as_view(),
         name="payment_detail",
     ),
     path(
-        "payments/<int:pk>/delete",
+        "payments/<int:pk>/delete/",
         PaymentDestroyAPIView.as_view(),
         name="payment_delete",
     ),
     path(
-        "payments/<int:pk>/update",
+        "payments/<int:pk>/update/",
         PaymentUpdateAPIView.as_view(),
         name="payment_update",
     ),
