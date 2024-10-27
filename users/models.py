@@ -69,7 +69,10 @@ class Payment(models.Model):
         blank=True,
     )
 
-    payment_amount = models.FloatField(verbose_name="Сумма оплаты")
+    payment_amount = models.PositiveIntegerField(
+        verbose_name="Сумма оплаты",
+        help_text="Введите сумму оплаты",
+    )
 
     payment_method = models.CharField(
         max_length=50,
@@ -79,6 +82,22 @@ class Payment(models.Model):
         ],
         default="bank_transfer",
         verbose_name="Способ оплаты",
+        help_text="Выберите способ оплаты",
+    )
+
+    session_id = models.CharField(
+        max_length=255,
+        verbose_name='ID сессии',
+        blank=True,
+        null=True,
+    )
+
+    link = models.URLField(
+        max_length=400,
+        verbose_name='Ссылка на оплату',
+        blank=True,
+        null=True,
+        help_text='Перейдите по этой ссылке, чтобы оплатить продукт'
     )
 
     def __str__(self):
