@@ -81,6 +81,14 @@ class Lesson(models.Model):
         help_text="Выберите владельца урока",
     )
 
+    likes = models.ManyToManyField(
+        settings.AUTH_USER_MODEL,
+        verbose_name="Лайки",
+        help_text="Укажите лайки",
+        related_name="user_likes",
+        blank=True,
+    )
+
     class Meta:
         verbose_name = "Урок"
         verbose_name_plural = "Уроки"
