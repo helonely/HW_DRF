@@ -9,13 +9,14 @@ from materials.paginators import LearningPagination, LessonPagination
 from materials.serializers import (CourseCountSerializer, CourseSerializer,
                                    LessonSerializer, SubscriptionSerializer)
 from users.permissions import IsModer, IsOwner
+from materials.tasks import send_mail_update
 
 
 class CourseViewSet(viewsets.ModelViewSet):
     queryset = Course.objects.all()
 
     def get_serializer_class(self):
-        if self.action == "retrieve":
+        if self.action == "list" or self.action == "retrieve":
             return CourseCountSerializer
         return CourseSerializer
 
@@ -40,6 +41,11 @@ class CourseViewSet(viewsets.ModelViewSet):
                 return Course.objects.all()
             return Course.objects.filter(owner=user)
         return Course.objects.none()
+
+    def perform_update(self, serializer):
+        updated_course = serializer.save()
+        send_mail_update.delay(updated_course)
+        updated_course.save()
 
 
 class LessonCreateAPIView(generics.CreateAPIView):
