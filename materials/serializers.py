@@ -43,8 +43,8 @@ class CourseCountSerializer(serializers.ModelSerializer):
     subscription = serializers.SerializerMethodField()
 
     @staticmethod
-    def get_count_lesson(lesson):
-        return Lesson.objects.filter(course=lesson).count()
+    def get_count_lesson(course):
+        return Lesson.objects.filter(course=Lesson.course).count()
 
     def get_subscription(self, obj):
         if Subscription.objects.filter(course=obj, user=self.context.get('request', None).user.id):
