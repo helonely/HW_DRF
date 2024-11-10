@@ -19,7 +19,7 @@ def send_mail_update(course_id):
         print(f"Отправка электронного письма на {subscription.user.email}")
         send_mail(
             subject="Обновление материалов курса",
-            message=f'Курс {subscription.course.title} был обновлен.',
+            message=f'Курс {subscription.course.name} был обновлен.',
             from_email=EMAIL_HOST_USER,
             recipient_list=[subscription.user.email],
             fail_silently=False
