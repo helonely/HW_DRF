@@ -34,4 +34,9 @@ urlpatterns = [
     path(
         'subscription/', SubscriptionListAPIView.as_view(), name='subscription_list'
     ),
+    path(
+        "lessons/<int:pk>/likes/",
+        LessonListAPIView.as_view(),
+        name="lesson_like",
+    ),
 ] + router.urls
